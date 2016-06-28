@@ -1,6 +1,3 @@
-//intentionally written without using expressions.
-//once I have a better understanding of expressions I will revise.
-
 function hey(string) {
 
 if (string == '   ' || string == '' ){
