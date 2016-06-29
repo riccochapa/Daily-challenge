@@ -7,12 +7,11 @@ if (string == string.toUpperCase() && string !== string.toLowerCase())
 		return 'Sure.';
 
 	else if (string.trim() == 0)
-		return 'Fine. Be that way!';	
+		return 'Fine. Be that way!';
 
 	else return 'Whatever.';
 
 }
-
 
 describe('Bob', function() {
 
