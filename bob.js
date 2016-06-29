@@ -8,7 +8,7 @@ else if (string.slice(-1) == '?'){
 		return 'Sure.';
 	}
 
-else if (string == '   ' || string == '' ){
+else if (string == '   ' || string == ''){
 		return 'Fine. Be that way!';
 	}
 
