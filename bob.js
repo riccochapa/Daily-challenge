@@ -3,11 +3,11 @@ function hey(string) {
 if (string == string.toUpperCase() && string !== string.toLowerCase())
 	return 'Whoa, chill out!';
 
-	else if (string == '   ' || string == '')
-		return 'Fine. Be that way!';
-
 	else if (string.slice(-1) == '?')
 		return 'Sure.';
+
+	else if (string.trim() == 0)
+		return 'Fine. Be that way!';	
 
 	else return 'Whatever.';
 
