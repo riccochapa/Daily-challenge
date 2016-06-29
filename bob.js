@@ -1,19 +1,18 @@
 function hey(string) {
 
-if (string == '   ' || string == '' ){
-		return 'Fine. Be that way!';
+if (string == string.toUpperCase() && string !== string.toLowerCase()){
+	return 'Whoa, chill out!';
 	}
 
-if (string.slice(-1) == '?' && string == string.slice(-2).toUpperCase() || string.slice(-1) == '?' && string !== string.toUpperCase()){
+else if (string.slice(-1) == '?'){
 		return 'Sure.';
 	}
 
-if (string == string.toUpperCase() && string !== string.toLowerCase()){
-
-		return 'Whoa, chill out!';
+else if (string == '   ' || string == '' ){
+		return 'Fine. Be that way!';
 	}
 
-	return 'Whatever.';
+	else return 'Whatever.';
 
 }
 
