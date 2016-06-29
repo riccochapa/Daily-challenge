@@ -1,16 +1,13 @@
 function hey(string) {
 
-if (string == string.toUpperCase() && string !== string.toLowerCase()){
+if (string == string.toUpperCase() && string !== string.toLowerCase())
 	return 'Whoa, chill out!';
-	}
 
-else if (string.slice(-1) == '?'){
-		return 'Sure.';
-	}
-
-else if (string == '   ' || string == ''){
+	else if (string == '   ' || string == '')
 		return 'Fine. Be that way!';
-	}
+
+	else if (string.slice(-1) == '?')
+		return 'Sure.';
 
 	else return 'Whatever.';
 
