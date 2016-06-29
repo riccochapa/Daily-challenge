@@ -3,7 +3,7 @@ function hey(string) {
 if (string == string.toUpperCase() && string !== string.toLowerCase())
 	return 'Whoa, chill out!';
 
-	else if (string.slice(-1) == '?')
+	else if (string.trim().slice(-1) == '?')
 		return 'Sure.';
 
 	else if (string.trim() == 0)
