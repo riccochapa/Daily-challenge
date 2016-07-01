@@ -11,7 +11,7 @@ var pair = function(input) {
         return false;
       }
   }
-return stack.length != true;
+  return stack.length != true;
 };
 
 console.log(pair('{}((((()))))'));
