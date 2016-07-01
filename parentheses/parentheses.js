@@ -8,9 +8,9 @@ var pair = function(input) {
     if (ying[yang]){
       stack.push(yang);
     }
-      else if (ying[stack.pop()] !== yang){
-        return false;
-      }
+    else if (ying[stack.pop()] !== yang){
+      return false;
+    }
   }
   return stack.length != true;
 };
