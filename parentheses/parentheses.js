@@ -4,9 +4,11 @@ var pair = function(input) {
   for (var i = 0; i < input.length; i ++) {
     var ying = {'[':']','{':'}','(':')'};
     var yang = input[i];
-    if (ying[yang]) {
+
+    if (ying[yang]){
       stack.push(yang);
-    } else if (ying[stack.pop()] !== yang) {
+    }
+      else if (ying[stack.pop()] !== yang){
         return false;
       }
   }
