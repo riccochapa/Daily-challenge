@@ -1,6 +1,10 @@
 var pair = function(input) {
 
-  var ying = { '[' : ']' , '{' : '}' , '(' : ')' };
+  var ying = {
+     '[' : ']' ,
+     '{' : '}' ,
+     '(' : ')'
+   };
   var stack = [];
 
   for (var i = 0; i < input.length; i ++) {
