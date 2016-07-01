@@ -2,16 +2,16 @@ function count(string) {
 
   string = string.trim().toLowerCase().replace(/[\n\t+]/g, " ").replace(/ +/g, " ");
   var words = string.split(" ");
-  var huh = string.split(" ");
+  var wordCount = string.split(" ");
 
   var a = new Object();
   for (var i = 0; i < words.length; i++) {
     var counter = 0;
-    for (var j = 0; j < huh.length; j++) {
+    for (var j = 0; j < wordCount.length; j++) {
 
-      if (words[i] == huh[j]) {
+      if (words[i] == wordCount[j]) {
         counter++;
-        delete huh[j];
+        delete wordCount[j];
 
         if (counter > 0) {
           a[ [ words[i] ] ] = counter;
