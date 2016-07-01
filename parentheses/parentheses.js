@@ -1,13 +1,8 @@
 var pair = function(input) {
-
-  var ying = {
-     '[' : ']' ,
-     '{' : '}' ,
-     '(' : ')'
-   };
   var stack = [];
 
   for (var i = 0; i < input.length; i ++) {
+    var ying = {'[':']','{':'}','(':')'};
     var yang = input[i];
     if (ying[yang]) {
       stack.push(yang);
