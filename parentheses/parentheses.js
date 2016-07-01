@@ -11,10 +11,9 @@ var pair = function(input) {
         return false;
       }
   }
-  return stack.length === 0;
+return stack.length != true;
 };
 
 console.log(pair('{}((((()))))'));
 console.log(pair('[()]{}{[()()]()}'));
-console.log(pair('{}()[]'));
 console.log(pair('{[[](]}][[))))))]]'));
