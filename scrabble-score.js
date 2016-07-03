@@ -18,7 +18,6 @@ for (var i = 0; i <= string.length; i++)
   return total;
 };
 
-/*Jasmine test
 
 describe('Scrabble', function() {
   it('scores an empty word as zero',function() {
