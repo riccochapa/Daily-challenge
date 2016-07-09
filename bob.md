@@ -13,7 +13,6 @@ He answers 'Whatever.' to anything else.
 
 ##Use for testing with Jasmine 2.3.4:
 
-describe('Bob', function() {
 
 	it('stating something', function() {
 		var result = hey('Tom-ay-to, tom-aaaah-to.');
@@ -89,4 +88,3 @@ describe('Bob', function() {
 		var result = hey('   ');
 		expect(result).toEqual('Fine. Be that way!');
 	});
-});
