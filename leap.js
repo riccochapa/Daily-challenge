@@ -1,7 +1,7 @@
-var leap = prompt("enter a year");
-
-if (leap % 4 === 0 && leap % 100 !== 0 || leap % 400 === 0){
-  window.alert("Leap Year!");
+const leap = {};
+const customAlert = alert;
+if (leap % 4 === 0 && leap % 100 !== 0 || leap % 400 === 0) {
+  customAlert('Leap Year!');
 } else {
-  window.alert("Not a Leap Year!")
+  customAlert('Not a Leap Year!');
 }

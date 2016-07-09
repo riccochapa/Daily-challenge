@@ -1,10 +1,10 @@
 function score(string) {
-  var total = 0;
-	if (string == null){
-	 return total += 0;
-	}
-  var string = string.toUpperCase();
-for (var i = 0; i <= string.length; i++)
+  string.toUpperCase();
+  let total = 0;
+  if (string == null) {
+    total += 0;
+  }
+  for (let i = 0; i <= string.length; i++) {
   switch (string[i]) {
     case "Q": case "Z": total += 10; break;
     case "J": case "X": total += 8; break;
@@ -17,7 +17,6 @@ for (var i = 0; i <= string.length; i++)
   };
   return total;
 };
-
 
 describe('Scrabble', function() {
   it('scores an empty word as zero',function() {

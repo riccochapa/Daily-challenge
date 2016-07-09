@@ -1,5 +1,4 @@
-/*
-# Hamming
+#Hamming
 
 Write a program that can calculate the Hamming difference between two DNA strands.
 
@@ -30,17 +29,13 @@ nucleotides are different from their equivalent in the other string.
 
 The Hamming distance between these two DNA strands is 7.
 
-### Submitting the answer
- 1. Solve the problem in the lines below
- 2. When solved correctly create and push hamming.js in your github daily-challenges repo.
+##Use to start:
 
-*/
-
-var compute = function(dna1, dna2){
+var compute = function(){
 	return -1;
 };
 
-/// -- do not edit below ---
+##Use for testing with Jasmine 2.3.4:
 
 describe('Hamming', function () {
 
@@ -72,7 +67,7 @@ describe('Hamming', function () {
     expect(compute('GGACGGATTCTG', 'AGGACGGATTCT')).toEqual(9);
   });
 
-  xit('throws error when strands are not equal length', function() {
+  it('throws error when strands are not equal length', function() {
     expect(function() { compute('GGACGGATTCTG', 'AGGAC'); }).toThrow(
       new Error('DNA strands must be of equal length.')
     );

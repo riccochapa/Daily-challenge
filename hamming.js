@@ -1,26 +1,23 @@
-var compute = function(dna1, dna2) {
+const compute = function compute(dna1, dna2) {
+  let difference = 0;
 
-	var difference = 0;
-
-	for (var i = 0; i <= dna1.length && dna2.length; i++) {
-		if (dna1[i] != dna2[i]) {
-			++difference
-		}
-	}
-
-	return difference;
+  for (let i = 0; i <= dna1.length; i++) {
+    if (dna1[i] !== dna2[i]) {
+      ++difference;
+    }
+  }
+  return difference;
 };
 
-/// -- do not edit below ---
+// / -- do not edit below ---
 
-describe('Hamming', function() {
-
-	it('no difference between identical strands', function() {
-		expect(compute('A', 'A')).toEqual(0);
+describe('Hamming', function () {
+	  it('no difference between identical strands', function () {
+		  expect(compute('A', 'A')).toEqual(0);
 	});
 
-	it('complete hamming distance for single nucleotide strand', function() {
-		expect(compute('A', 'G')).toEqual(1);
+	  it('complete hamming distance for single nucleotide strand', function () {
+		  expect(compute('A', 'G')).toEqual(1);
 	});
 
 	it('complete hamming distance for small strand', function() {
@@ -50,5 +47,4 @@ describe('Hamming', function() {
 			new Error('DNA strands must be of equal length.')
 		);
 	});
-
 });
