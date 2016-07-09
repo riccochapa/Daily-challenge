@@ -18,7 +18,6 @@ this look-up, pretend it doesn't exist and implement it yourself.
 
 ##Use for testing with Jasmine 2.3.4:
 
-describe('Leap year', function() {
 
   it('is not very common', function() {
     expect(isLeap(2015)).toBe(false);
@@ -36,25 +35,18 @@ describe('Leap year', function() {
     expect(isLeap(2000)).toBe(true);
   });
 
-  // Feel free to enable the following tests to check some more examples
-  describe('Additional example of a leap year that', function () {
-
-    it('is not a leap year', function () {
-      expect(isLeap(1978)).toBe(false);
-    });
-
-    it('is a common leap year', function () {
-      expect(isLeap(1992)).toBe(true);
-    });
-
-    it('is skipped every 100 years', function () {
-      expect(isLeap(2100)).toBe(false);
-    });
-
-    it('is reintroduced every 400 years', function () {
-      expect(isLeap(2400)).toBe(true);
-    });
-
+  it('is not a leap year', function () {
+    expect(isLeap(1978)).toBe(false);
   });
 
-});
+  it('is a common leap year', function () {
+    expect(isLeap(1992)).toBe(true);
+  });
+
+  it('is skipped every 100 years', function () {
+    expect(isLeap(2100)).toBe(false);
+  });
+
+  it('is reintroduced every 400 years', function () {
+    expect(isLeap(2400)).toBe(true);
+  });
