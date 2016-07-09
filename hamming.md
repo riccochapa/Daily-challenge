@@ -37,8 +37,6 @@ var compute = function(){
 
 ##Use for testing with Jasmine 2.3.4:
 
-describe('Hamming', function () {
-
   it('no difference between identical strands', function () {
     expect(compute('A', 'A')).toEqual(0);
   });
@@ -72,5 +70,3 @@ describe('Hamming', function () {
       new Error('DNA strands must be of equal length.')
     );
   });
-
-});
