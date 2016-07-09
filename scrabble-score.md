@@ -35,7 +35,6 @@ And to total:
 
 ##Use for testing with Jasmine 2.3.4:
 
-describe('Scrabble', function() {
   it('scores an empty word as zero',function() {
     expect(score('')).toEqual(0);
   });
