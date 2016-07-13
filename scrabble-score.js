@@ -1,10 +1,10 @@
 function score(string) {
-  string.toUpperCase();
-  let total = 0;
-  if (string == null) {
-    total += 0;
-  }
-  for (let i = 0; i <= string.length; i++) {
+  var total = 0;
+	if (string == null){
+	 return total += 0;
+	}
+  var string = string.toUpperCase();
+for (var i = 0; i <= string.length; i++)
   switch (string[i]) {
     case "Q": case "Z": total += 10; break;
     case "J": case "X": total += 8; break;
@@ -17,3 +17,30 @@ function score(string) {
   };
   return total;
 };
+
+
+describe('Scrabble', function() {
+  it('scores an empty word as zero',function() {
+    expect(score('')).toEqual(0);
+  });
+
+  it('scores a null as zero',function() {
+    expect(score(null)).toEqual(0);
+  });
+
+  it('scores a very short word',function() {
+    expect(score('a')).toEqual(1);
+  });
+
+  it('scores the word by the number of letters',function() {
+    expect(score('street')).toEqual(6);
+  });
+
+  it('scores more complicated words with more',function() {
+    expect(score('quirky')).toEqual(22);
+  });
+
+  it('scores case insensitive words',function() {
+    expect(score('OXYPHENBUTAZONE')).toEqual(41);
+  });
+});

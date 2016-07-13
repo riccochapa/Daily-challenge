@@ -7,6 +7,7 @@ function hey(string) {
 	else if (string.trim() == 0) {
     return 'Fine. Be that way!';
   } else return 'Whatever.';
+};
 
 describe('Bob', function() {
 
