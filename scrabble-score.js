@@ -1,46 +1,81 @@
-function score(string) {
-  var total = 0;
-	if (string == null){
-	 return total += 0;
+function count(string) {
+  string.trim().toLowerCase().replace(/[\n\t+]/g, ' ')
+	.replace(/ +/g, ' ')
+	.split(' ');
+
+  const tally = new {};
+  for (let i = 0; i < string.length; ++i) {
+    let counter = 0;
+    for (let j = 0; j < string.length; ++j) {
+      if (string[i] === string[j]) {
+        ++counter;
+      }
+      if (counter > 0) {
+				a[[string[i]]] = counter;
+		}
 	}
-  var string = string.toUpperCase();
-for (var i = 0; i <= string.length; i++)
-  switch (string[i]) {
-    case "Q": case "Z": total += 10; break;
-    case "J": case "X": total += 8; break;
-    case "K": total += 5; break;
-    case "F": case "H": case "V": case "W": case "Y": total += 4; break;
-    case "B": case "C": case "M": case "P": total += 3; break;
-    case "D": case "G": total += 2; break;
-    case "A": case "E": case "I": case "O": case "U": case "L": case "N": case "R": case "S": case "T": total += 1; break;
-	 default: total += 0;
-  };
-  return total;
+	return (tally);
 };
 
+describe('count()', function() {
 
-describe('Scrabble', function() {
-  it('scores an empty word as zero',function() {
-    expect(score('')).toEqual(0);
+  it('counts one word', function() {
+    var expectedCounts = { word: 1 };
+    expect(count('word')).toEqual(expectedCounts);
   });
 
-  it('scores a null as zero',function() {
-    expect(score(null)).toEqual(0);
+  it('counts one of each', function() {
+    var expectedCounts = { one: 1, of: 1, each: 1 };
+    expect(count('one of each')).toEqual(expectedCounts);
   });
 
-  it('scores a very short word',function() {
-    expect(score('a')).toEqual(1);
+  it('counts multiple occurrences', function() {
+    var expectedCounts = { one: 1, fish: 4, two: 1, red: 1, blue: 1 };
+    expect(count('one fish two fish red fish blue fish')).toEqual(expectedCounts);
   });
 
-  it('scores the word by the number of letters',function() {
-    expect(score('street')).toEqual(6);
+  it('includes punctuation', function() {
+    var expectedCounts = { car: 1, ':': 2, carpet: 1, as: 1, java: 1, 'javascript!!&@$%^&': 1 };
+    expect(count('car : carpet as java : javascript!!&@$%^&')).toEqual(expectedCounts);
   });
 
-  it('scores more complicated words with more',function() {
-    expect(score('quirky')).toEqual(22);
+  it('includes numbers', function() {
+    var expectedCounts = { testing: 2, 1: 1, 2: 1 };
+    expect(count('testing 1 2 testing')).toEqual(expectedCounts);
   });
 
-  it('scores case insensitive words',function() {
-    expect(score('OXYPHENBUTAZONE')).toEqual(41);
+  it('normalizes to lowercase', function() {
+    var expectedCounts = { go: 3 };
+    expect(count('go Go GO')).toEqual(expectedCounts);
+  });
+
+  it('counts properly international characters', function() {
+    var expectedCounts = { '¡hola!': 1, '¿qué': 1, 'tal?': 1, 'привет!': 1 };
+    expect(count('¡Hola! ¿Qué tal? Привет!')).toEqual(expectedCounts);
+  });
+
+  it('counts multiline', function() {
+    var expectedCounts = { hello: 1, world: 1 };
+    expect(count('hello\nworld')).toEqual(expectedCounts);
+  });
+
+  it('counts tabs', function() {
+    var expectedCounts = { hello: 1, world: 1 };
+    expect(count('hello\tworld')).toEqual(expectedCounts);
+  });
+
+  it('counts multiple spaces as one', function() {
+    var expectedCounts = { hello: 1, world: 1 };
+    expect(count('hello    world')).toEqual(expectedCounts);
+  });
+
+  it('does not count leading or trailing whitespace', function() {
+    var expectedCounts = { introductory: 1, course: 1 };
+    expect(count('\t\tIntroductory Course      ')).toEqual(expectedCounts);
+  });
+
+  it('handles properties that exist on Object’s prototype', function() {
+    var expectedCounts = { reserved: 1, words: 1, like: 1, constructor: 1, and: 1, tostring: 1, 'ok?': 1 };
+    expect(count('reserved words like constructor and toString ok?')).toEqual(expectedCounts);
   });
 });
