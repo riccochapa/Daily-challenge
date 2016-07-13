@@ -1,7 +1,11 @@
-const leap = {};
-const customAlert = alert;
-if (leap % 4 === 0 && leap % 100 !== 0 || leap % 400 === 0) {
-  customAlert('Leap Year!');
+var leap = function(year) {
+
+if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0){
+  return 'Leap Year!';
 } else {
-  customAlert('Not a Leap Year!');
+  return 'Not a Leap Year!';
 }
+};
+
+console.log(leap(2000));
+console.log(leap(2100));
