@@ -39,7 +39,7 @@ var Allergies = function(score) {
 
 	Allergies.prototype.list = function() {
 		return (finalAllergens.map(function(allergen) {
-			return allergen[0];
+		return allergen[0];
 		}).reverse());
 	};
 
