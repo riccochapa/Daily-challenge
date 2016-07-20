@@ -18,4 +18,4 @@ for (var i = 0; i <= string.length; i++)
   return total;
 };
 
-console.log(score('Supercalifragiliticexpialidocious'));
+console.log(score('Supercalifragiliticexpialidocious')); 
